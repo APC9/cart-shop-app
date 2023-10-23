@@ -1,0 +1,41 @@
+<div class="productCart-wrapper" *ngFor="let product of productsInCart">
+  <article class="productCart">
+    <div class="product-body">
+      <p>{{product.title}}</p>
+      <div class="product-body-info">
+        <p>Precio: {{product.price | currency:'EUR'}}</p>
+        <p>Cantidad: {{product.amount}}</p>
+      </div>
+    </div>
+
+    <div class="productCart-total">
+      <p>total: {{ product.amount * product.price}}</p>
+    </div>
+
+    <div class="productCart-buttons">
+      <div class="productCart-buttons-operators">
+        <i
+          class="fa-solid fa-minus"
+          style="color: red;"
+          (click)="subtractProductFromCart(product)"></i>
+
+        <span>product.Cantidad</span>
+
+        <i
+          class="fa-solid fa-plus"
+          style="color: blue;"
+          (click)="addProductToCart(product)"></i>
+      </div>
+      <i class="fa-solid fa-trash" (click)="removeProductFromCart(product)"></i>
+    </div>
+  </article>
+
+
+  <div class="cartTotal">
+    <p class="cartTotal-total"> Total: Total</p>
+  </div>
+
+  <button class="cart-btn">Ir a</button>
+</div>
+
+

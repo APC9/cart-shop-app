@@ -1,0 +1,21 @@
+<nav class="navbar">
+  <div class="navbar-log">
+    <i class="fa-solid fa-store fa-2x"></i>
+  </div>
+
+  <div class="navbar-title">Angular Shop</div>
+
+  <div class="navbar-cart">
+    <div class="navbar-cart-items">
+      <p>{{productsInCart.length}}</p>
+    </div>
+
+    <i class="fa-solid fa-cart-shopping" (click)="onToggleCart()" ></i>
+  </div>
+</nav>
+
+<div class="cart" [ngClass]="{ show:viewCart }" *ngIf="productsInCart.length > 0">
+  <app-cart />
+</div>
+
+
